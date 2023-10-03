@@ -48,7 +48,7 @@ int main(){
 
 
 
-/*==== Przyklad kopiowanie stringow ====
+/*==== Przyklad kopiowanie stringow ====*/
 
 void copy_string(char *destination_string, char *source_string)
 {
@@ -70,6 +70,6 @@ void main(void)
    if(sizeof(str2) > sizeof(str1))
        copy_string(str2, str1);
     while(1);
-}*/
+}
 
 

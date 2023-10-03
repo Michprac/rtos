@@ -1,9 +1,9 @@
 ******************************************************************************
              TMS320C2000 Linker PC v21.6.1                     
 ******************************************************************************
->> Linked Tue Oct  3 11:25:29 2023
+>> Linked Tue Oct  3 11:38:48 2023
 
-OUTPUT FILE NAME:   <Lab_1.out>
+OUTPUT FILE NAME:   <L1.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00008000
 
 
@@ -13,7 +13,7 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
   BEGIN                 00000000   00000002  00000000  00000002  RWIX
-  RAMM0                 00000050   000003b0  00000023  0000038d  RWIX
+  RAMM0                 00000050   000003b0  00000027  00000389  RWIX
   RAML0_L3              00008000   00002000  000000fb  00001f05  RWIX
   FPUTABLES             003fd860   000006a0  00000000  000006a0  RWIX
   IQTABLES              003fdf00   00000b50  00000000  00000b50  RWIX
@@ -38,12 +38,13 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.cinit     0    00000050    00000023     
+.cinit     0    00000050    00000027     
                   00000050    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
                   0000005e    00000009     main.obj (.cinit:_str1)
                   00000067    00000005     rts2800_fpu32.lib : _lock.c.obj (.cinit:__lock)
                   0000006c    00000005                       : _lock.c.obj (.cinit:__unlock)
-                  00000071    00000002     --HOLE-- [fill = 0]
+                  00000071    00000004     main.obj (.cinit:_str2)
+                  00000075    00000002     --HOLE-- [fill = 0]
 
 .text      0    00008000    000000fb     
                   00008000    00000056     rts2800_fpu32.lib : boot28.asm.obj (.text)
@@ -76,9 +77,9 @@ MODULE SUMMARY
        Module            code   initialized data   uninitialized data
        ------            ----   ----------------   ------------------
     .\
-       main.obj          29     9                  16                
+       main.obj          29     13                 16                
     +--+-----------------+------+------------------+--------------------+
-       Total:            29     9                  16                
+       Total:            29     13                 16                
                                                                      
     C:\ti\ccs1040\ccs\tools\compiler\ti-cgt-c2000_21.6.1.LTS\lib\rts2800_fpu32.lib
        boot28.asm.obj    86     0                  0                 
@@ -94,7 +95,7 @@ MODULE SUMMARY
                                                                      
        Stack:            0      0                  768               
     +--+-----------------+------+------------------+--------------------+
-       Grand Total:      251    33                 794               
+       Grand Total:      251    37                 794               
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE

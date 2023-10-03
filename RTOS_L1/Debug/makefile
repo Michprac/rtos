@@ -120,34 +120,34 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-Lab_1.out \
+L1.out \
 
 EXE_OUTPUTS__QUOTED += \
-"Lab_1.out" \
+"L1.out" \
 
 BIN_OUTPUTS += \
-Lab_1.hex \
+L1.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"Lab_1.hex" \
+"L1.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "Lab_1.out"
+	@$(MAKE) --no-print-directory -Onone "L1.out"
 
 # Tool invocations
-Lab_1.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+L1.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla0 --float_support=fpu32 --vcu_support=vcu0 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"Lab_1.map" --stack_size=0x300 --warn_sections -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/lib" -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="Lab_1_linkInfo.xml" --rom_model -o "Lab_1.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla0 --float_support=fpu32 --vcu_support=vcu0 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"L1.map" --stack_size=0x300 --warn_sections -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/lib" -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="L1_linkInfo.xml" --rom_model -o "L1.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-Lab_1.hex: $(EXE_OUTPUTS)
+L1.hex: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
 	@echo 'Invoking: C2000 Hex Utility'
-	"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/bin/hex2000" --diag_wrap=off -o "Lab_1.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-c2000_21.6.1.LTS/bin/hex2000" --diag_wrap=off -o "L1.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
